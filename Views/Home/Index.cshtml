@@ -1,0 +1,25 @@
+﻿@model List<LogType>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <form action="Home/PrintLog" method="post">
+        <input name="message" placeholder="type your log message..">
+        <select name="className">
+            @foreach (var item in Model)
+            {
+                <option value="@item.ClassName"> @item.Title </option>
+            }
+        </select>
+        <button type="submit"> Print Log </button>
+    </form>
+
+    @ViewData["result"]
+
+    
+</div>
