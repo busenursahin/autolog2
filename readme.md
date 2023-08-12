@@ -2,6 +2,7 @@
 
 This project demonstrates how to read log type data from a database table and dynamically generate corresponding classes for each log type. The generated class DLLs can then be included in the project without the need for recompilation, allowing for runtime execution.
 
+<br>
 Class Generation
 <img src="./generate-concrete.gif" />
 
