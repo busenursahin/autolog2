@@ -1,10 +1,17 @@
+using System.Reflection;
+using System.Runtime.Loader;
+using autolog.Constant;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+
 namespace autolog.Helper;
 
 public class ClassGenerator
 {
     public void GenerateClass(string className)
     {
-        using (StreamWriter writer = new StreamWriter($"/Users/bnd/Desktop/btk/projects/first-week/autolog/Concrete/{className}.cs"))
+
+        using (StreamWriter writer = new StreamWriter($"{Constants.GeneratedFolder}/{className}.cs"))
         {
             writer.WriteLine("using System;");
             writer.WriteLine("using System.Collections.Generic;");
@@ -27,6 +34,9 @@ public class ClassGenerator
             //writer.WriteLine($"    public string MyProperty = \"{myClass.MyProperty}\";");     --> içine prop eklemek istersek bu yapıyı kullanırız.
             writer.WriteLine("}");
         }
+
+
+
     }
 }
 

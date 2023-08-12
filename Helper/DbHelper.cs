@@ -5,6 +5,12 @@ namespace autolog.Helper;
 
 public class DbHelper
 {
+    IConfiguration _configuration;
+    public DbHelper(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+
     private static string your_password = "";
     private string connectionString = $"";
 
@@ -12,7 +18,12 @@ public class DbHelper
     {
         List<LogType> logTypes = new List<LogType>();
 
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        string configConnectionString = _configuration.GetConnectionString("azure_conntection");
+        if (configConnectionString != null) connectionString = configConnectionString;
+
+
+        var conn = new SqlConnection(connectionString);
+        using (SqlConnection connection = conn)
         {
             connection.Open();
 

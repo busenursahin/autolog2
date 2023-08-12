@@ -3,8 +3,12 @@
 
 ### DotnetCore ###
 # .NET Core build folders
+tx.txt
+
 bin/
 obj/
+
+# appsettings.json
 
 # Common node modules locations
 /node_modules

@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="7.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.0.1" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+
   </ItemGroup>
 
 </Project>

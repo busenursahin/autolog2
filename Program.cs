@@ -2,10 +2,11 @@ using System.Reflection;
 using autolog.Helper;
 using autolog.Middleware;
 
-DbHelper dbHelper = new DbHelper();
-dbHelper.CreateLogManagerClassFromDb();
 
 var builder = WebApplication.CreateBuilder(args);
+
+DbHelper dbHelper = new DbHelper(builder.Configuration);
+dbHelper.CreateLogManagerClassFromDb();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

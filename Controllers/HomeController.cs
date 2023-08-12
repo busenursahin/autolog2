@@ -10,15 +10,17 @@ namespace autolog.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IConfiguration _configuration;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
     {
         _logger = logger;
+        _configuration = configuration;
     }
 
     public IActionResult Index(string message)
     {
-        DbHelper dbHelper = new DbHelper();
+        DbHelper dbHelper = new DbHelper(_configuration);
         List<LogType> logTypes = dbHelper.GetLogTypes();
 
         ViewData["result"] = message;
