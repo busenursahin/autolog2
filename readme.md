@@ -1,6 +1,6 @@
-# Dynamic Interface and Class Generation from Database Log Types
+# Dynamic Class and DLL Generation at Runtime from Database Log Types
 
-This project demonstrates how to read log type data from a database table and dynamically generate corresponding interfaces and classes for each log type. The generated class DLLs can then be included in the project without the need for recompilation, allowing for runtime execution.
+This project demonstrates how to read log type data from a database table and dynamically generate corresponding classes for each log type. The generated class DLLs can then be included in the project without the need for recompilation, allowing for runtime execution.
 
 Class Generation
 <img src="./generate-concrete.gif" />
@@ -12,7 +12,7 @@ DLL Generation
 
 ## Purpose
 
-The main goal of this project is to automate the process of generating interface definitions and class implementations based on the log types stored in a database table. This approach enables seamless integration of new log types without the need for manual code changes and recompilation.
+The main goal of this project is to automate the process of generating class implementations based on the log types stored in a database table. This approach enables seamless integration of new log types without the need for manual code changes and recompilation.
 
 ## How to Use
 
@@ -22,7 +22,7 @@ Here's a high-level overview of how to use the project:
 
 2. **Reading Log Types**: Implement the logic to read log types from the database table. Each log type should have a unique identifier and associated metadata.
 
-3. **Dynamic Interface and Class Generation**: Use the metadata from the database to dynamically generate C# interfaces and class implementations for each log type. These classes will extend the predefined log interface.
+3. **Dynamic Class Generation**: Use the metadata from the database to dynamically generate C# classes for each log type. These classes will extend the predefined log interface.
 
 4. **Compile Generated Classes**: Use a code compilation library (such as Roslyn) to compile the dynamically generated classes into separate DLLs.
 
